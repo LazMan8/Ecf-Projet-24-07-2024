@@ -18,7 +18,11 @@ try {
 
         switch ($url[0]) {
             case "accueil":
-                require "";
+                require "../app/app.php";
+                break;
+
+            case "login":
+                require "../app/Views/login.php";
                 break;
 
             default:
