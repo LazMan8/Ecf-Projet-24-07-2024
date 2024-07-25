@@ -1,7 +1,7 @@
 <?php
 
 require "../env.php";
-require "../app/model/ConnexionDB.php";
+require "../app/Models/ConnexionDB.php";
 
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
