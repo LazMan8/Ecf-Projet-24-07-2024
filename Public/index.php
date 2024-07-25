@@ -18,7 +18,7 @@ try {
 
         switch ($url[0]) {
             case "accueil":
-                require "";
+                echo "coucou";
                 break;
 
             default:
