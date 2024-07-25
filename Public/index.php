@@ -12,7 +12,7 @@ $db = new ConnexionBD();
 
 try {
     if (empty($_GET['page'])) {
-        require "../app/app.php";
+        require "../app/Views/Partial/header.php";
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
 

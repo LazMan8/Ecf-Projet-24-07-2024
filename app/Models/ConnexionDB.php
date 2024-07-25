@@ -20,7 +20,7 @@
                 PDO::ATTR_EMULATE_PREPARES => false
             ];
         
-            $pdo = new PDO('mysql:host=' . DBHOST . ';dbname=' . DBNAME . ';charset=utf8mb4', DBUSER, DBPASS, $options);
+            $this->_dataBase= new PDO('mysql:host=' . DBHOST . ';dbname=' . DBNAME . ';charset=utf8mb4', DBUSER, DBPASS, $options);
         } catch (PDOException $exception) {
             // If there is an error with the connection, stop the script and display the error.
             echo ($exception);
