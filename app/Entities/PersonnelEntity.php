@@ -15,6 +15,9 @@ class PersonnelEntity extends MotherEntity{
     private int $telPerso;
     private string $numService;
 
+    private array $habilitations;
+
+
     // Constructeur
 
     public function __construct(string $numMatriculePerso, string $melPerso,string $mdPerso,string $nomPerso,string $prenomPerso,string $dateNaissancePerso, string $adresseVille,string $adresseRue, int $adressePostale, int $telPerso, string $numService){
@@ -29,6 +32,8 @@ class PersonnelEntity extends MotherEntity{
         $this->adressePostale = $adressePostale;
         $this->telPerso = $telPerso;
         $this->numService = $numService;
+
+        $this->habilitations = [];
 
     }
 
@@ -123,6 +128,44 @@ class PersonnelEntity extends MotherEntity{
         $this->numService = $strNumService;
      }
         
-     
+     public function addHabilitation(
+        $objApplication,
+        $objHabilite,
+        $objRole) {
+        $this->habilitations[] = [
+            'application' => $objApplication,
+            'estHabilite' => $objHabilite,
+            'role' => $objRole,
+        ];
+     }
+
+     public function removeHabilitation(EstHabiliteEntity $rmhabilitation) {
+        $i = count($this->habilitations);
+        $remove = -1;
+        // while($i > 0) {
+        //     $i--;
+        //     if($this->habilitations[$i]['estHabilite']['idRoleAppli'] == $habilitations['idRoleAppli']
+        //     && $this->habilitations[$i]['estHabilite']['idAppli'] == $habilitations['idAppli'])
+        //         $remove = $i;
+        //         break;
+        // }
+
+        if($remove > 0) {
+            array_splice($this->habilitations, $i, 1);
+        }
+
+     }
+
+     public function resetHabilitations() {
+        $this->habilitations = [];
+     }
+
+
+     public function getHabilitations() {
+        return $this->habilitations;
+     }
+
+
+
     
 }

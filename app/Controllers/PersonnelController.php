@@ -40,7 +40,7 @@ class PersonnelController extends MotherController
 
 
             $personnelModel = new PersonnelModel();
-            $this->_personnel = $personnelModel->findPersonnelByMel($_POST['mel']);
+            $this->_personnel = $personnelModel->findPersonnelByEmail($_POST['mel']);
             if ($this->_personnel == null)
             {
                 $arrErrors['mel'] = "Le mail n'existe pas";

@@ -27,7 +27,7 @@ try {
 
         switch ($url[0]) {
             case "accueil":
-                require "../app/app.php";
+                $pcontroller->connexion();
                 break;
 
             case "login":
