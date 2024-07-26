@@ -42,11 +42,11 @@ class PersonnelModel extends ConnexionBD{
         }
 
     // Exécution de la requête et affichage des résultats
-        return $sthis-> _dataBase->query($strQuery)->fetchall();
+        return $this-> _dataBase->query($strQuery)->fetchall();
         
     }
 
-    public function addPerso(PersonnelEntity $objPersonnel):bool{
+    public function addPerso(PersonnelEntity $objPersonnel){
         $strQuery="INSERT INTO personnel(numMatriculePerso, melPerso,mdPerso,nomPerso,prenomPerso,dateNaissancePerso,adresseVille,adresseRue,adressePostale,telPerso,numService) VALUES(:numMatriculePerso, :melPerso, :mdPerso, :prenomPerso, :dateNaissancePerso, :adresseVille,adresseRue, :adressePostale, :telPerso, :numService);";
 
         $strRqPrep = $this->_dataBase->prepare($strQuery);
@@ -144,7 +144,7 @@ class PersonnelModel extends ConnexionBD{
 
     }
     public function delHabilitation($habilitations){
-        
+
     }
 
 
