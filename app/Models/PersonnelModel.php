@@ -18,31 +18,31 @@ class PersonnelModel extends ConnexionBD{
     public function ListPersonnel():array{
         $strQuery = "SELECT personnel.numMatriculePerso,melPerso,mdpPerso,mdpPerso,nomPerso,prenomPerso,dateNaissancePerso,adresseVille,adresseRue,adressePostale,telPerso,numService,
         roleapplicatif.idRoleAppli,nomAppli,bdAppli,`application`.idAppli
-        FROM personnel
-            INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
-                    INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
-                        INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
+        FROM personnel;";
+            //INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
+                    //INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
+                        //INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
                            
 
   
         // Recherche par mot clé
             // Recherche par numéro de matricule
 
-        $strNumMatriculePerso = $_POST['numMatriculePerso']??"";
-        if($strNumMatriculePerso !=""){
-            $strQuery .="numMatricule= '".$strNumMatricule."' ";
-        }
+        //$strNumMatriculePerso = $_POST['numMatriculePerso']??"";
+        //if($strNumMatriculePerso !=""){
+        //   $strQuery .="numMatricule= '".$strNumMatricule."' ";
+        //}
 
             // Recherche par nom
 
-        $strnomPerso = $_POST['nomPerso']??"";
-        if ($strnomPerso !=""){
-            $strQuery .="nomPerso = '".$strnomPerso."' ";
+        //$strnomPerso = $_POST['nomPerso']??"";
+        //if ($strnomPerso !=""){
+           // $strQuery .="nomPerso = '".$strnomPerso."' ";
 
-        }
+        //}
 
     // Exécution de la requête et affichage des résultats
-        return $this-> _dataBase->query($strQuery)->fetchall();
+        return $this-> _dataBase->query($strQuery)->fetchAll();
         
     }
 
@@ -63,7 +63,7 @@ class PersonnelModel extends ConnexionBD{
         $strRqPrep->bindValue(":adresseVille",
         $objPersonnel->getAdresseVille(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":adresseRue",
-        $objPersonnel->getAdresseRue(), PDO::PARMA_STR);
+        $objPersonnel->getAdresseRue(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":adressePostale",
         $objPersonnel->getAdressePostal(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":telPerso",
@@ -71,9 +71,6 @@ class PersonnelModel extends ConnexionBD{
         $strRqPrep->bindValue(":numService",
         $objPersonnel->getNumService(), PDO::PARAM_STR);
     
-
-        
-        
 
 
     }
@@ -116,7 +113,7 @@ class PersonnelModel extends ConnexionBD{
 
             $objApplication = new ApplicationEntity(
                 $habilitation['idAppli'],
-                $habilitation['idRoleAppli'],
+                $habilitation['nomAppli'],
                 $habilitation['bdAppli'],
             );
 
@@ -141,9 +138,6 @@ class PersonnelModel extends ConnexionBD{
         }
 
         return $objPersonnel;
-
-    }
-    public function delHabilitation($habilitations){
 
     }
 

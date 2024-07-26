@@ -20,7 +20,7 @@ class PersonnelEntity extends MotherEntity{
 
     // Constructeur
 
-    public function __construct(string $numMatriculePerso, string $melPerso,string $mdPerso,string $nomPerso,string $prenomPerso,string $dateNaissancePerso, string $adresseVille,string $adresseRue, int $adressePostale, int $telPerso, string $numService,array $habilitations){
+    public function __construct(string $numMatriculePerso, string $melPerso,string $mdPerso,string $nomPerso,string $prenomPerso,string $dateNaissancePerso, string $adresseVille,string $adresseRue, int $adressePostale, int $telPerso, string $numService){
         $this->numMatriculePerso = $numMatriculePerso;
         $this->melPerso = $melPerso;
         $this->mdPerso = $mdPerso;
@@ -125,7 +125,7 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setNumService($strNumService){
-        $this->numServie = $strNumService;
+        $this->numService = $strNumService;
      }
         
      public function addHabilitation(
@@ -140,7 +140,7 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function removeHabilitation(EstHabiliteEntity $rmhabilitation) {
-        $i = count($this->addHabilitations);
+        $i = count($this->habilitations);
         $remove = -1;
         while($i > 0) {
             $i--;
