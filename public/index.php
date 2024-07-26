@@ -11,13 +11,17 @@ require "../app/Controllers/PersonnelController.php";
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
+// nouvelle instance du PDO
 $db = new ConnexionBD();
+// nouvelle instance de la classe MotherController pour executer le code
 $pcontroller = new PersonnelController();
 
 
 try {
+    // si c'est vide alors sa affiche par defaut la page de login
     if (empty($_GET['page'])) {
-        require "../app/Views/login.php";
+        //require "../app/Views/login.php";
+        $pcontroller->connexion();
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
 
