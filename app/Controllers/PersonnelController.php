@@ -103,7 +103,6 @@ class PersonnelController extends MotherController
         $habilitations = $this->_personnel->getHabilitations();
 
         // affichage de la vue
-        require(__DIR__ . "/../Views/Partial/header.php");
         require(__DIR__ . "/../Views/affichageConfirmeConnexion.php");
         
 
@@ -121,4 +120,5 @@ class PersonnelController extends MotherController
         $_SESSION['message'] = "Vous êtes bien déconnecté";
         header("Location:index.php");
     }
+
 }

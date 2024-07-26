@@ -42,7 +42,7 @@ class PersonnelModel extends ConnexionBD{
         // }
 
     // Exécution de la requête et affichage des résultats
-        return $this-> _dataBase->query($strQuery)->fetchall();
+        return $this-> _dataBase->query($strQuery)->fetchAll();
         
     }
 

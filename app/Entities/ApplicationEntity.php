@@ -43,9 +43,9 @@ class ApplicationEntity{
     /**
      * Set the value of idRoleAppli
      */
-    public function setIdRoleAppli(string $idRoleAppli): self
+    public function setNomAppli(string $nomAppli): self
     {
-        $this->nomAppli= $idRoleAppli;
+        $this->nomAppli= $nomAppli;
 
         return $this;
     }
