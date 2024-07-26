@@ -142,13 +142,13 @@ class PersonnelEntity extends MotherEntity{
      public function removeHabilitation(EstHabiliteEntity $rmhabilitation) {
         $i = count($this->habilitations);
         $remove = -1;
-        // while($i > 0) {
-        //     $i--;
-        //     if($this->habilitations[$i]['estHabilite']['idRoleAppli'] == $habilitations['idRoleAppli']
-        //     && $this->habilitations[$i]['estHabilite']['idAppli'] == $habilitations['idAppli'])
-        //         $remove = $i;
-        //         break;
-        // }
+        while($i > 0) {
+            $i--;
+            if($this->habilitations[$i]['estHabilite']['idRoleAppli'] == $rmhabilitation['idRoleAppli']
+            && $this->habilitations[$i]['estHabilite']['idAppli'] == $rmhabilitation['idAppli'])
+                $remove = $i;
+                break;
+        }
 
         if($remove > 0) {
             array_splice($this->habilitations, $i, 1);
@@ -164,6 +164,8 @@ class PersonnelEntity extends MotherEntity{
      public function getHabilitations() {
         return $this->habilitations;
      }
+
+
 
 
 

@@ -18,10 +18,10 @@ class PersonnelModel extends ConnexionBD{
     public function ListPersonnel():array{
         $strQuery = "SELECT personnel.numMatriculePerso,melPerso,mdpPerso,mdpPerso,nomPerso,prenomPerso,dateNaissancePerso,adresseVille,adresseRue,adressePostale,telPerso,numService,
         roleapplicatif.idRoleAppli,nomAppli,bdAppli,`application`.idAppli
-        FROM personnel
-            INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
-                    INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
-                        INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
+        FROM personnel;";
+            // INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
+            //         INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
+            //             INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
                            
 
   
@@ -89,9 +89,9 @@ class PersonnelModel extends ConnexionBD{
         $stmt = $this-> _dataBase->query($strQuery);
         $habilitations = $stmt->fetchAll();
 
+
         if($habilitations === false || count($habilitations) == 0)
             return null;
-
 
         $objPersonnel  = new PersonnelEntity(
             $habilitations[0]['numMatriculePerso'],
@@ -113,7 +113,7 @@ class PersonnelModel extends ConnexionBD{
 
             $objApplication = new ApplicationEntity(
                 $habilitation['idAppli'],
-                $habilitation['idRoleAppli'],
+                $habilitation['nomAppli'],
                 $habilitation['bdAppli'],
             );
 

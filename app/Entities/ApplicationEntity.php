@@ -1,14 +1,14 @@
 <?php
 class ApplicationEntity{
     private string $idAppli;
-    private string $idRoleAppli;
+    private string $nomAppli;
     private string $bdAppli;
 
 
 
-    public function __construct(string $idAppli, string $idRoleAppli, string $bdAppli){
+    public function __construct(string $idAppli, string $nomAppli, string $bdAppli){
         $this->idAppli = $idAppli;
-        $this->idRoleAppli = $idRoleAppli;
+        $this->nomAppli= $nomAppli;
         $this->bdAppli = $bdAppli;
 
     }
@@ -35,9 +35,9 @@ class ApplicationEntity{
     /**
      * Get the value of idRoleAppli
      */
-    public function getIdRoleAppli(): string
+    public function getNomAppli(): string
     {
-        return $this->idRoleAppli;
+        return $this->nomAppli;
     }
 
     /**
@@ -45,7 +45,7 @@ class ApplicationEntity{
      */
     public function setIdRoleAppli(string $idRoleAppli): self
     {
-        $this->idRoleAppli = $idRoleAppli;
+        $this->nomAppli= $idRoleAppli;
 
         return $this;
     }

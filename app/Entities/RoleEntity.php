@@ -7,9 +7,9 @@ class RoleEntity{
 
 
     public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli){
-        $this-> idAppli = $idAppli;
-        $this-> idRoleAppli = $idRoleAppli;
-        $this-> mdpRoleAppli;
+        $this->idAppli = $idAppli;
+        $this->idRoleAppli = $idRoleAppli;
+        $this->mdpRoleAppli = $mdpRoleAppli;
 
     }
     

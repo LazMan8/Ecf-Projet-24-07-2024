@@ -5,7 +5,6 @@ require "../app/Models/ConnexionBD.php";
 require "../vendor/autoload.php";
 require "../app/Controllers/MotherController.php";
 require "../app/Entities/MotherEntity.php";
-// require du controller
 require "../app/Controllers/PersonnelController.php";
 
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
@@ -13,6 +12,7 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" :
 
 // nouvelle instance du PDO
 $db = new ConnexionBD();
+
 // nouvelle instance de la classe MotherController pour executer le code
 $pcontroller = new PersonnelController();
 

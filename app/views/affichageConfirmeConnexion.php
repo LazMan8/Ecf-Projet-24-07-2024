@@ -15,4 +15,16 @@
     <!-- Affichage du role -->
     <p></p>
     
+    <?php
+    echo "<ul>";
+        foreach($habilitations as $habilitation) {
+            echo "<li>";
+            echo $habilitation['application']->getNomAppli() . " ";
+            echo $habilitation['application']->getbdAppli() . " ";
+            echo $habilitation['role']->getIdRoleAppli() . " ";
+            echo $habilitation['role']->getMdpRoleAppli() . " ";
+            echo "</li>";
+        }
+        echo "</ul>";
+    ?>
 </body>

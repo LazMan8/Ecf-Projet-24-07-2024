@@ -40,18 +40,26 @@ class PersonnelController extends MotherController
 
 
             $personnelModel = new PersonnelModel();
+            
             $this->_personnel = $personnelModel->findPersonnelByEmail($_POST['mel']);
+            
             if ($this->_personnel == null)
             {
                 $arrErrors['mel'] = "Le mail n'existe pas";
+                //Afichage du formaulaire
+                require("../app/Views/login.php");
+                //ToDo ameliorer 
+                print_r($arrErrors);
             }
 
             
             else 
             {
-                if (password_verify($_POST['password'], $this->_personnel->getMdPerso()))
+                // if (password_verify($_POST['password'], $this->_personnel->getMdPerso()))
+                if ($_POST['password'] == $this->_personnel->getMdPerso())
                 {
                     // utilisateur connecter 
+                    echo 'xx';
                     $this->afficherInfo();
 
                 }
@@ -88,20 +96,15 @@ class PersonnelController extends MotherController
         $paragraphe = "Voici vos information personnel";
 
         // valeur recu a la fin des traitement en post et en sql
-        //$matricul = $this->_personnel->getNumMatriculePerso();
-        //$nom = $this->_personnel->getNomPerso();
-        //$prenom = $this->_personnel->getPrenomPerso();
+        $matricul = $this->_personnel->getNumMatriculePerso();
+        $nom = $this->_personnel->getNomPerso();
+        $prenom = $this->_personnel->getPrenomPerso();
 
-        //varible de test
-        $matricul = "59-p";
-        $nom = "po";
-        $prenom = "zi";
-
-
+        $habilitations = $this->_personnel->getHabilitations();
 
         // affichage de la vue
-        require("../Views/Partial/header.php");
-        require("../Views/affichageConfirmeConnexion.php");
+        require(__DIR__ . "/../Views/Partial/header.php");
+        require(__DIR__ . "/../Views/affichageConfirmeConnexion.php");
         
 
           
