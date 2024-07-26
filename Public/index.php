@@ -1,13 +1,21 @@
 <?php
 
 require "../env.php";
-require "../app/Models/ConnexionDB.php";
+require "../app/Models/ConnexionBD.php";
+require "../app/Controllers/MotherController.php";
+require "../app/Entities/MotherEntity.php";
+require "../app/Models/PersonnelModel.php";
 
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
 $db = new ConnexionBD();
 
+$m = new PersonnelModel();
+$p = $m->findPersonnelByEmail("adrienschmitt@expemple.com");
+echo "<pre>";
+var_dump($p);
+echo "</pre>";
 
 
 try {

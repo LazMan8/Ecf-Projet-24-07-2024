@@ -1,15 +1,15 @@
 <?php
-class RoleEntity{
+class ApplicationEntity{
     private string $idAppli;
     private string $idRoleAppli;
-    private string $mdpRoleAppli;
+    private string $bdAppli;
 
 
 
-    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli){
+    public function __construct(string $idAppli, string $idRoleAppli, string $bdAppli){
         $this->idAppli = $idAppli;
         $this->idRoleAppli = $idRoleAppli;
-        $this->mdpRoleAppli = $mdpRoleAppli;
+        $this->bdAppli = $bdAppli;
 
     }
     
@@ -51,19 +51,19 @@ class RoleEntity{
     }
 
     /**
-     * Get the value of mdpRoleAppli
+     * Get the value of bdAppli
      */
-    public function getMdpRoleAppli(): string
+    public function getbdAppli(): string
     {
-        return $this->mdpRoleAppli;
+        return $this->bdAppli;
     }
 
     /**
-     * Set the value of mdpRoleAppli
+     * Set the value of bdAppli
      */
-    public function setMdpRoleAppli(string $mdpRoleAppli): self
+    public function setbdAppli(string $bdAppli): self
     {
-        $this->mdpRoleAppli = $mdpRoleAppli;
+        $this->bdAppli = $bdAppli;
 
         return $this;
     }

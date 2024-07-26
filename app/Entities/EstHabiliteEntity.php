@@ -1,15 +1,15 @@
 <?php
-class RoleEntity{
+class EstHabiliteEntity{
     private string $idAppli;
     private string $idRoleAppli;
-    private string $mdpRoleAppli;
+    private string $numMatriculePerso;
 
 
 
-    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli){
+    public function __construct(string $idAppli, string $idRoleAppli, string $numMatriculePerso){
         $this->idAppli = $idAppli;
         $this->idRoleAppli = $idRoleAppli;
-        $this->mdpRoleAppli = $mdpRoleAppli;
+        $this->numMatriculePerso = $numMatriculePerso;
 
     }
     
@@ -51,19 +51,19 @@ class RoleEntity{
     }
 
     /**
-     * Get the value of mdpRoleAppli
+     * Get the value of numMatriculePerso
      */
-    public function getMdpRoleAppli(): string
+    public function getnumMatriculePerso(): string
     {
-        return $this->mdpRoleAppli;
+        return $this->numMatriculePerso;
     }
 
     /**
-     * Set the value of mdpRoleAppli
+     * Set the value of numMatriculePerso
      */
-    public function setMdpRoleAppli(string $mdpRoleAppli): self
+    public function setnumMatriculePerso(string $numMatriculePerso): self
     {
-        $this->mdpRoleAppli = $mdpRoleAppli;
+        $this->numMatriculePerso = $numMatriculePerso;
 
         return $this;
     }
