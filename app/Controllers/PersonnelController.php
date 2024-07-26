@@ -1,24 +1,110 @@
 <?php
 
-class PersonnelController
+require __DIR__ . "/../Models/PersonnelModel.php";
+
+class PersonnelController extends MotherController
 {
+
+    private ?PersonnelEntity $_personnel;
+
     public function connexion()
     {
         //Variable titre et paragraphe
         $titreH1 = "Connexion";
         $paragraphe = "Formulaire de connexion";
 
-        //Afichage du formaulaire
-        require("app/Views/login.php");
+        
+        //Initialise un tableau d'erreur
+        $arrErrors	= array();
 
-        if (count($_POST) > 0) {
+        // verifie si les information sont envoyer en "Post"
+        if (count($_POST) > 0) 
+        {
+            if ($_POST['mel'] == '')
+            {
+                $arrErrors['mel'] = "Le mail est obligatoire";
+            }
+
+            if ($_POST['password'] == '')
+            {
+                $arrErrors['password'] = "Le mot de passe est obligatoire";
+            }
+
+            if (count($arrErrors) > 0) 
+            {
+                //Afichage du formaulaire
+                require("../app/Views/login.php");
+                //ToDo ameliorer 
+                print_r($arrErrors);
+            }
+
+
+            $personnelModel = new PersonnelModel();
+            $this->_personnel = $personnelModel->findPersonnelByMel($_POST['mel']);
+            if ($this->_personnel == null)
+            {
+                $arrErrors['mel'] = "Le mail n'existe pas";
+            }
+
+            
+            else 
+            {
+                if (password_verify($_POST['password'], $this->_personnel->getMdPerso()))
+                {
+                    // utilisateur connecter 
+                    $this->afficherInfo();
+
+                }
+                else 
+                {
+                    $arrErrors['password'] = "Le mot de passe est incorrect";
+                    //Afichage du formaulaire
+                    require("../app/Views/login.php");
+                    //ToDo ameliorer 
+                    print_r($arrErrors);
+                }
+
+
+            }
+
+        }
+
+        else 
+        {
+            //Afichage du formaulaire
+            require("../app/Views/login.php");
         }
 
 
+    }
 
-        // fais une condition si tous les champs du fmormulaire de login sont completer en POST alors 
+
+    public function afficherInfo()
+    {
+        // Test
+        //echo $this->_personnel->getNomPerso();
+
+        $titreH1 = "Vous etes connecter";
+        $paragraphe = "Voici vos information personnel";
+
+        // valeur recu a la fin des traitement en post et en sql
+        //$matricul = $this->_personnel->getNumMatriculePerso();
+        //$nom = $this->_personnel->getNomPerso();
+        //$prenom = $this->_personnel->getPrenomPerso();
+
+        //varible de test
+        $matricul = "59-p";
+        $nom = "po";
+        $prenom = "zi";
 
 
+
+        // affichage de la vue
+        require("../Views/Partial/header.php");
+        require("../Views/affichageConfirmeConnexion.php");
+        
+
+          
     }
 
     public function deconnexion()

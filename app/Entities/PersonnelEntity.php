@@ -59,7 +59,7 @@ class PersonnelEntity extends MotherEntity{
     }
     
     public function getAdresseVille(){
-        return $this->adrreVille;
+        return $this->adresseVille;
     }
 
     public function getAdresseRue(){
@@ -100,7 +100,7 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setDateNaissancePerso($strDateNaissancePerso){
-        $this->setDateNaissancePerso=$strDateNaissancePerso;
+        $this->dateNaissancePerso=$strDateNaissancePerso;
      }
 
      public function setAdresseVille($strAdresseVille){
@@ -120,13 +120,9 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setNumService($strNumService){
-        $this->numServie = $strNumService;
+        $this->numService = $strNumService;
      }
         
      
-
-
-
-
     
 }
