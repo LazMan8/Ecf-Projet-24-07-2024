@@ -143,6 +143,9 @@ class PersonnelModel extends ConnexionBD{
         return $objPersonnel;
 
     }
+    public function delHabilitation($habilitations){
+        
+    }
 
 
 }
