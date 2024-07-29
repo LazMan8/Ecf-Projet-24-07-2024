@@ -13,5 +13,13 @@
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="password" required>
   </div>
+  <div>
+      <label for="app">application :</label>
+      <select id="monselect">
+      <option value="valeur1" selected>---</option>
+        <option value="valeur2">animaux</option>
+        <option value="valeur3">atelier</option>
+      </select>
+  </div>
   <button type="submit">Se connecter</button>
 </form>

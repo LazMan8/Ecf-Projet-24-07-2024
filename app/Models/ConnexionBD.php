@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Classe mère qui permet de faire la connection à la BDD
- */
-
  class ConnexionBD
 {
     protected PDO $_dataBase;

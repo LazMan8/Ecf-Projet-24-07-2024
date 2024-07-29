@@ -65,7 +65,7 @@ class PersonnelModel extends ConnexionBD{
         $strRqPrep->bindValue(":adresseRue",
         $objPersonnel->getAdresseRue(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":adressePostale",
-        $objPersonnel->getAdressePostal(), PDO::PARAM_STR);
+        $objPersonnel->getAdressePostale(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":telPerso",
         $objPersonnel->getTelPerso(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":numService",
@@ -127,6 +127,8 @@ class PersonnelModel extends ConnexionBD{
                 $habilitation['idAppli'],
                 $habilitation['idRoleAppli'],
                 $habilitation['mdpRoleAppli'],
+                $habilitation['nomAppli'],
+                $habilitation['bdAppli']
             );
 
             $objPersonnel->addHabilitation(
@@ -137,14 +139,11 @@ class PersonnelModel extends ConnexionBD{
 
         }
 
+
+
         return $objPersonnel;
 
     }
    
-
-    
-
-
-
 
 }

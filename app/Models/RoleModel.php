@@ -11,7 +11,7 @@ class RoleModel extends ConnexionBD{
     public function deleteRole($idRoleAppli, $idAppli){
         
         
-        $strquery = 'DELETE FROM esthabilite WHERE idRoleAppli=? && idAppli = ?';
+        $strQuery = 'DELETE FROM esthabilite WHERE idRoleAppli=? && idAppli = ?';
         $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 

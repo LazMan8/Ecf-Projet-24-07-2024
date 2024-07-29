@@ -1,14 +1,7 @@
-
-.titre{
-
-    margin-left :800px;
-    
-     
-}
-
-nav {
-    
-    display:flex;
-    justify-content: space-evenly;
-    
-}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+    color: grey;
+    text-decoration: none;
+  }
