@@ -140,6 +140,11 @@ class PersonnelModel extends ConnexionBD{
         return $objPersonnel;
 
     }
+   
+
+    
+
+
 
 
 }

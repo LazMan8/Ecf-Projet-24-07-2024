@@ -17,6 +17,10 @@ $db = new ConnexionBD();
 $pcontroller = new PersonnelController();
 
 
+
+
+
+
 try {
         // si c'est vide alors la page login s'affiche par défaut
     if (empty($_GET['page'])) {
