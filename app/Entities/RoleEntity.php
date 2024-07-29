@@ -3,13 +3,17 @@ class RoleEntity{
     private string $idAppli;
     private string $idRoleAppli;
     private string $mdpRoleAppli;
+    private string $nomAppli;
+    private string $bdApplication;
 
 
 
-    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli){
+    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli, string $nomAppli, string $bdApplication){
         $this->idAppli = $idAppli;
         $this->idRoleAppli = $idRoleAppli;
         $this->mdpRoleAppli = $mdpRoleAppli;
+        $this->nomAppli = $nomAppli;
+        $this->bdApplication = $bdApplication;
 
     }
     
@@ -66,5 +70,38 @@ class RoleEntity{
         $this->mdpRoleAppli = $mdpRoleAppli;
 
         return $this;
+    }
+
+    /**
+     * Get the value of nomAppli
+     */
+    public function getNomAppli(): string
+    {
+        return $this->nomAppli;
+    }
+
+    /**
+     * Set the value of nomAppli
+     */
+    public function setNomAppli(string $nomAppli)
+    {
+        return $this->nomAppli = $nomAppli;
+    }
+
+    /**
+     * Get the value of $bddApplication
+     */
+    public function getBdApplication()
+    {
+        return $this->bdApplication;
+    }
+
+    /**
+     * Set the value of nomAppli
+     */
+
+     public function setBdApplication(string $bddApplication)
+    {
+        return $this->bdApplication = $bddApplication;
     }
 }

@@ -127,6 +127,8 @@ class PersonnelModel extends ConnexionBD{
                 $habilitation['idAppli'],
                 $habilitation['idRoleAppli'],
                 $habilitation['mdpRoleAppli'],
+                $habilitation['nomAppli'],
+                $habilitation['bdAppli']
             );
 
             $objPersonnel->addHabilitation(
@@ -134,6 +136,8 @@ class PersonnelModel extends ConnexionBD{
                 $objHabilite,
                 $objRole,
             );
+
+
 
         }
 

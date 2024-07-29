@@ -6,6 +6,8 @@ require "../vendor/autoload.php";
 require "../app/Controllers/MotherController.php";
 require "../app/Entities/MotherEntity.php";
 require "../app/Controllers/PersonnelController.php";
+require "../app/Controllers/RoleController.php";
+require "../app/Views/gestionRole.php";
 
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
     "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
@@ -15,8 +17,9 @@ $db = new ConnexionBD();
 
 // nouvelle instance de la classe MotherController pour executer le code
 $pcontroller = new PersonnelController();
+$roleController = new RoleController();
 
-
+require "../app/Views/Partial/header.php";
 try {
     // si c'est vide alors sa affiche par defaut la page de login
     if (empty($_GET['page'])) {
@@ -34,8 +37,8 @@ try {
                 $pcontroller->connexion();
                 break;
 
-            case "test":
-                $pcontroller->afficherInfo();
+            case "gestionRole":
+                $roleController->affectationRoles();
                 break;
 
             case "deconnexion":
@@ -49,3 +52,5 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
+
+require "../app/Views/Partial/footer.php";

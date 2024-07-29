@@ -30,6 +30,8 @@ class PersonnelController extends MotherController
                 $arrErrors['password'] = "Le mot de passe est obligatoire";
             }
 
+            if ($_POST['password'] == '')
+
             if (count($arrErrors) > 0) 
             {
                 //Afichage du formaulaire
@@ -119,6 +121,29 @@ class PersonnelController extends MotherController
         session_start();
         $_SESSION['message'] = "Vous êtes bien déconnecté";
         header("Location:index.php");
+        
+    }
+
+    // ajout de personnel avec leur roles
+    public function addPersonnel()
+    {
+        //Initialise un tableau d'erreur
+        $arrErrors	= array();
+
+
+
+    }
+
+    // // donne les permission
+    // public function givePermission()
+    // {
+        
+    // }
+
+    // gestions des roles
+    public function gestionRoles()
+    {
+
     }
 
 }
