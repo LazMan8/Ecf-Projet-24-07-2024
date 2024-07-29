@@ -64,7 +64,7 @@ class PersonnelEntity extends MotherEntity{
     }
     
     public function getAdresseVille(){
-        return $this->adrresseVille;
+        return $this->adresseVille;
     }
 
     public function getAdresseRue(){
@@ -144,8 +144,8 @@ class PersonnelEntity extends MotherEntity{
         $remove = -1;
         while($i > 0) {
             $i--;
-            if($this->habilitations[$i]['estHabilite']['idRoleAppli'] == $habilitation['idRoleAppli']
-            && $this->habilitations[$i]['estHabilite']['idAppli'] == $habilitation['idAppli'])
+            if($this->habilitations[$i]['estHabilite']['idRoleAppli'] == $rmhabilitation['idRoleAppli']
+            && $this->habilitations[$i]['estHabilite']['idAppli'] == $rmhabilitation['idAppli'])
                 $remove = $i;
                 break;
         }
