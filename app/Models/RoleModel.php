@@ -15,13 +15,11 @@ class RoleModel extends ConnexionBD{
         $stmt = $this-> _dataBase->prepare($strquery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
-        $strquery = 'DELETE FROM roleApplicatif WHERE idRoleAppli=? && idAppli = ?';
+        $strquery = 'DELETE FROM roleapplicatif WHERE idRoleAppli=? && idAppli = ?';
         $stmt = $this-> _dataBase->prepare($strquery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
         return $stmt->rowCount();
-
-
 
     }
 
@@ -38,9 +36,19 @@ class RoleModel extends ConnexionBD{
 
         } 
         
-
-        // Exécution de la requête et affichage des résultats
+         // Exécution de la requête et affichage des résultats
         return $roles;
+    }
+
+    // fonction qui ajoute un role 
+    public function addRole($idAppli, $mdpRoleAppli)
+    {
+        $strQuery = "INSERT INTO roleapplicatif (idAppli, mdpRoleAppli) VALUES (?, ?)";
+        $stmt = $this-> _dataBase->prepare($strQuery);
+        $stmt->execute([$idAppli, $mdpRoleAppli]);
+        return $stmt->rowCount();
+        
+
     }
 
 
