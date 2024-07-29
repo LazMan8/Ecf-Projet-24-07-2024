@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 require "../env.php";
 require "../app/Models/ConnexionBD.php";
@@ -55,6 +54,3 @@ try {
 }
 
 require "../app/Views/Partial/footer.php";
-=======
-phpinfo();
->>>>>>> origin/developp

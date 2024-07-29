@@ -15,12 +15,9 @@ class PersonnelEntity extends MotherEntity{
     private int $telPerso;
     private string $numService;
 
-<<<<<<< HEAD
     private array $habilitations;
 
 
-=======
->>>>>>> origin/developp
     // Constructeur
 
     public function __construct(string $numMatriculePerso, string $melPerso,string $mdPerso,string $nomPerso,string $prenomPerso,string $dateNaissancePerso, string $adresseVille,string $adresseRue, int $adressePostale, int $telPerso, string $numService){
@@ -36,11 +33,8 @@ class PersonnelEntity extends MotherEntity{
         $this->telPerso = $telPerso;
         $this->numService = $numService;
 
-<<<<<<< HEAD
         $this->habilitations = [];
 
-=======
->>>>>>> origin/developp
     }
 
     // Getters
@@ -70,11 +64,7 @@ class PersonnelEntity extends MotherEntity{
     }
     
     public function getAdresseVille(){
-<<<<<<< HEAD
         return $this->adresseVille;
-=======
-        return $this->adrreVille;
->>>>>>> origin/developp
     }
 
     public function getAdresseRue(){
@@ -115,11 +105,7 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setDateNaissancePerso($strDateNaissancePerso){
-<<<<<<< HEAD
         $this->dateNaissancePerso=$strDateNaissancePerso;
-=======
-        $this->setDateNaissancePerso=$strDateNaissancePerso;
->>>>>>> origin/developp
      }
 
      public function setAdresseVille($strAdresseVille){
@@ -139,7 +125,6 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setNumService($strNumService){
-<<<<<<< HEAD
         $this->numService = $strNumService;
      }
         
@@ -180,12 +165,6 @@ class PersonnelEntity extends MotherEntity{
         return $this->habilitations;
      }
 
-=======
-        $this->numServie = $strNumService;
-     }
-        
-     
->>>>>>> origin/developp
 
 
 
