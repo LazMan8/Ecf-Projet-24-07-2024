@@ -94,8 +94,8 @@ class PersonnelController extends MotherController
         // Test
         //echo $this->_personnel->getNomPerso();
 
-        $titreH1 = "Vous etes connecter";
-        $paragraphe = "Voici vos information personnel";
+        $titreH1 = "Vous êtes connecté";
+        $paragraphe = "Voici vos informations personnelles";
 
         // valeur recu a la fin des traitement en post et en sql
         $matricul = $this->_personnel->getNumMatriculePerso();

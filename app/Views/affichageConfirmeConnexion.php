@@ -4,7 +4,7 @@
     <p><?= $paragraphe; ?></p>
 
     <!-- Afiche du matricule -->
-    <p>Matricul : <?=$matricul;?></p>
+    <p>Matricule : <?=$matricul;?></p>
 
     <!-- Affichage du nom -->
     <p>Nom : <?= $nom; ?></p>
