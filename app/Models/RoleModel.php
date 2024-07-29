@@ -41,6 +41,8 @@ class RoleModel extends ConnexionBD{
         // Exécution de la requête et affichage des résultats
         return $roles;
     }
+    
+    
 
 
 
