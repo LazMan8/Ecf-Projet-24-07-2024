@@ -8,7 +8,7 @@ class ApplicationEntity{
 
     public function __construct(string $idAppli, string $nomAppli, string $bdAppli){
         $this->idAppli = $idAppli;
-        $this->nomAppli= $nomAppli;
+        $this->nomAppli = $nomAppli;
         $this->bdAppli = $bdAppli;
 
     }
@@ -45,7 +45,7 @@ class ApplicationEntity{
      */
     public function setNomAppli(string $nomAppli): self
     {
-        $this->nomAppli= $nomAppli;
+        $this->nomAppli = $nomAppli;
 
         return $this;
     }

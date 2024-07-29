@@ -19,27 +19,27 @@ class PersonnelModel extends ConnexionBD{
         $strQuery = "SELECT personnel.numMatriculePerso,melPerso,mdpPerso,mdpPerso,nomPerso,prenomPerso,dateNaissancePerso,adresseVille,adresseRue,adressePostale,telPerso,numService,
         roleapplicatif.idRoleAppli,nomAppli,bdAppli,`application`.idAppli
         FROM personnel;";
-            // INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
-            //         INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
-            //             INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
+            //INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
+                    //INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
+                        //INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
                            
 
   
         // Recherche par mot clé
             // Recherche par numéro de matricule
 
-        // $strNumMatriculePerso = $_POST['numMatriculePerso']??"";
-        // if($strNumMatriculePerso !=""){
-        //     $strQuery .="numMatricule= '".$strNumMatricule."' ";
-        // }
+        //$strNumMatriculePerso = $_POST['numMatriculePerso']??"";
+        //if($strNumMatriculePerso !=""){
+        //   $strQuery .="numMatricule= '".$strNumMatricule."' ";
+        //}
 
-        //     // Recherche par nom
+            // Recherche par nom
 
-        // $strnomPerso = $_POST['nomPerso']??"";
-        // if ($strnomPerso !=""){
-        //     $strQuery .="nomPerso = '".$strnomPerso."' ";
+        //$strnomPerso = $_POST['nomPerso']??"";
+        //if ($strnomPerso !=""){
+           // $strQuery .="nomPerso = '".$strnomPerso."' ";
 
-        // }
+        //}
 
     // Exécution de la requête et affichage des résultats
         return $this-> _dataBase->query($strQuery)->fetchAll();
@@ -70,7 +70,7 @@ class PersonnelModel extends ConnexionBD{
         $objPersonnel->getTelPerso(), PDO::PARAM_STR);
         $strRqPrep->bindValue(":numService",
         $objPersonnel->getNumService(), PDO::PARAM_STR);
-        
+    
 
 
     }
@@ -89,9 +89,9 @@ class PersonnelModel extends ConnexionBD{
         $stmt = $this-> _dataBase->query($strQuery);
         $habilitations = $stmt->fetchAll();
 
-
         if($habilitations === false || count($habilitations) == 0)
             return null;
+
 
         $objPersonnel  = new PersonnelEntity(
             $habilitations[0]['numMatriculePerso'],
@@ -128,7 +128,7 @@ class PersonnelModel extends ConnexionBD{
                 $habilitation['idRoleAppli'],
                 $habilitation['mdpRoleAppli'],
                 $habilitation['nomAppli'],
-                $habilitation['bdAppli']
+                $habilitation['bdApplication']
             );
 
             $objPersonnel->addHabilitation(
@@ -137,13 +137,16 @@ class PersonnelModel extends ConnexionBD{
                 $objRole,
             );
 
-
-
         }
 
         return $objPersonnel;
 
     }
+   
+
+    
+
+
 
 
 }
