@@ -21,6 +21,7 @@
             echo "<li>";
             echo $habilitation['application']->getNomAppli() . " ";
             echo $habilitation['application']->getbdAppli() . " ";
+            echo "<br>";
             echo $habilitation['role']->getIdRoleAppli() . " ";
             echo $habilitation['role']->getMdpRoleAppli() . " ";
             echo "</li>";

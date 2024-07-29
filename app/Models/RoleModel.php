@@ -28,7 +28,7 @@ class RoleModel extends ConnexionBD{
     // fonction qui affiche tous les roles
     public function ListRole() {
         $strQuery = "SELECT `application`.idAppli, nomAppli,bdAppli,roleapplicatif.idRoleAppli,mdpRoleAppli 
-                       FROM roleApplicatif 
+                       FROM roleapplicatif 
                         INNER JOIN `application` ON `application`.idAppli = roleapplicatif.idAppli ";
                         
         $dbRoles = $this-> _dataBase->query($strQuery)->fetchAll();

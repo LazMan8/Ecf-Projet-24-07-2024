@@ -16,8 +16,8 @@
   <div>
       <label for="app">application :</label>
       <select id="monselect">
-        <option value="valeur2">animaux</option>
-        <option value="valeur3">atelier</option>
+        <option name="animaux_superviseur" value="valeur1">animaux</option>
+        <option name="atelier_superviseur " value="valeur2">atelier</option>
       </select>
   </div>
   <button type="submit">Se connecter</button>
