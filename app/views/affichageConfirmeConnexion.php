@@ -4,13 +4,13 @@
     <p><?= $paragraphe; ?></p>
 
     <!-- Afiche du matricule -->
-    <p>Matricul : <?=$matricul;?></p>
+    <p>Matricule : <?=$matricul;?></p>
 
     <!-- Affichage du nom -->
     <p>Nom : <?= $nom; ?></p>
 
     <!-- Affichage du prenom -->
-     <p> Prenom : <?= $prenom ?></p>
+     <p> Prénom : <?= $prenom ?></p>
 
     <!-- Affichage du role -->
     <p></p>

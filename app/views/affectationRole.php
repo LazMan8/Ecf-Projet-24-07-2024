@@ -1,6 +1,3 @@
-<?php //echo"Affectation des rôles"; ?>
-
-
 
 <!DOCTYPE html>
 <html>
