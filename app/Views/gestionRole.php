@@ -25,4 +25,6 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
+<h1>Affectation des rôles</h1>
+<?php
 
