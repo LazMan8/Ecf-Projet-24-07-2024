@@ -53,6 +53,12 @@ try {
                 require "../app/Views/homePage.php";
                 break;
 
+            case "confirmeDeconnexion":
+                require "../app/Views/deconnexionPage.php";
+                break;
+
+
+                
             default:
                 throw new Exception("La page n'existe pas");
         }

@@ -120,7 +120,7 @@ class PersonnelController extends MotherController
         // on lance la session pour le message puis redirection vers la page d'accueil
         session_start();
         $_SESSION['message'] = "Vous êtes bien déconnecté";
-        header("Location:index.php");
+        header("Location:index.php?page=confirmeDeconnexion");
         
     }
 
