@@ -41,15 +41,17 @@ class RoleModel extends ConnexionBD{
     }
     
     // fonction qui ajoute un role
-    public function addRole($idAppli, $mdpRoleAppli)
+    public function addRole($idAppli, $idRoleAppli, $mdRoleAppli)
     {
-        $strQuery = "INSERT INTO roleapplicatif (idAppli, idRoleAppli) VALUES (?, ?)";
+        $strQuery = "INSERT INTO roleapplicatif (idAppli, idRoleAppli, mdpRoleAppli) VALUES (:idAppli, :idRoleAppli, :mdpRoleAppli)";
         $stmt = $this-> _dataBase->prepare($strQuery);
-        $stmt->execute([$idAppli, $mdpRoleAppli]);
+        $stmt->execute([$idAppli, $idRoleAppli, $mdRoleAppli]);
         return $stmt->rowCount();
+        
+
        
  
-    }
+        }
 
 
 
