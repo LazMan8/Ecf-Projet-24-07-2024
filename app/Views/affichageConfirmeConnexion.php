@@ -29,7 +29,7 @@
                 </div>
  
                 <div class="text-center mt-3">
-                    <a href="#" class="btn btn-danger btn-lg">Déconnexion</a>
+                    <a href="index.php?page=deconnexion" class="btn btn-danger btn-lg">Déconnexion</a>
                 </div>
             </div>
         </div>
