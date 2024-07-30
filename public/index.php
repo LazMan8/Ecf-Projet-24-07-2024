@@ -24,7 +24,8 @@ try {
     // si c'est vide alors sa affiche par defaut la page de login
     if (empty($_GET['page'])) {
         //require "../app/Views/login.php";
-        $pcontroller->connexion();
+       // $pcontroller->connexion();
+       require "../app/Views/homePage.php";
     } else {
         $url = explode("/", filter_var($_GET['page']), FILTER_SANITIZE_URL);
 
@@ -44,7 +45,20 @@ try {
             case "deconnexion":
                 $pcontroller->deconnexion();
                 break;
+            case "affectationRole":
+                require "../app/Views/affectation.php";
+                break;
 
+            case "":
+                require "../app/Views/homePage.php";
+                break;
+
+            case "confirmeDeconnexion":
+                require "../app/Views/deconnexionPage.php";
+                break;
+
+
+                
             default:
                 throw new Exception("La page n'existe pas");
         }
@@ -54,4 +68,3 @@ try {
 }
 
 require "../app/Views/Partial/footer.php";
-

@@ -3,7 +3,6 @@ class RoleEntity{
     private string $idAppli;
     private string $idRoleAppli;
     private string $mdpRoleAppli;
-
     private string $nomAppli;
     private string $bdApplication;
 
@@ -15,6 +14,7 @@ class RoleEntity{
         $this->mdpRoleAppli = $mdpRoleAppli;
         $this->nomAppli = $nomAppli;
         $this->bdApplication = $bdApplication;
+
 
     }
     
@@ -72,7 +72,6 @@ class RoleEntity{
 
         return $this;
     }
-
     /**
      * Get the value of nomAppli
      */

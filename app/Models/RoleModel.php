@@ -11,12 +11,12 @@ class RoleModel extends ConnexionBD{
     public function deleteRole($idRoleAppli, $idAppli){
         
         
-        $strquery = 'DELETE FROM esthabilite WHERE idRoleAppli=? && idAppli = ?';
-        $stmt = $this-> _dataBase->prepare($strquery);
+        $strQuery = 'DELETE FROM esthabilite WHERE idRoleAppli=? && idAppli = ?';
+        $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
-        $strquery = 'DELETE FROM roleApplicatif WHERE idRoleAppli=? && idAppli = ?';
-        $stmt = $this-> _dataBase->prepare($strquery);
+        $strQuery = 'DELETE FROM roleApplicatif WHERE idRoleAppli=? && idAppli = ?';
+        $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
         return $stmt->rowCount();
@@ -25,7 +25,6 @@ class RoleModel extends ConnexionBD{
 
     }
 
-    // fonction qui affiche tous les roles
     public function ListRole() {
         $strQuery = "SELECT `application`.idAppli, nomAppli,bdAppli,roleapplicatif.idRoleAppli,mdpRoleAppli 
                        FROM roleApplicatif 
@@ -35,12 +34,21 @@ class RoleModel extends ConnexionBD{
         foreach($dbRoles as $dbRole) {
             $roles[] = new RoleEntity($dbRole['idAppli'], $dbRole['idRoleAppli'], $dbRole['mdpRoleAppli'], 
                          $dbRole['nomAppli'], $dbRole['bdAppli']);
-
         } 
         
-
         // Exécution de la requête et affichage des résultats
         return $roles;
+    }
+    
+    // fonction qui ajoute un role
+    public function addRole($idAppli, $mdpRoleAppli)
+    {
+        $strQuery = "INSERT INTO roleapplicatif (idAppli, mdpRoleAppli) VALUES (?, ?)";
+        $stmt = $this-> _dataBase->prepare($strQuery);
+        $stmt->execute([$idAppli, $mdpRoleAppli]);
+        return $stmt->rowCount();
+       
+ 
     }
 
 

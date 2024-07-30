@@ -15,10 +15,7 @@ class PersonnelEntity extends MotherEntity{
     private int $telPerso;
     private string $numService;
 
-
     private array $habilitations;
-
-
 
 
     // Constructeur
@@ -35,7 +32,6 @@ class PersonnelEntity extends MotherEntity{
         $this->adressePostale = $adressePostale;
         $this->telPerso = $telPerso;
         $this->numService = $numService;
-
 
         $this->habilitations = [];
 
@@ -70,7 +66,6 @@ class PersonnelEntity extends MotherEntity{
     public function getAdresseVille(){
         return $this->adresseVille;
     }
-
 
     public function getAdresseRue(){
         return $this->adresseRue;
@@ -110,11 +105,8 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setDateNaissancePerso($strDateNaissancePerso){
-
         $this->dateNaissancePerso=$strDateNaissancePerso;
      }
-
-
 
      public function setAdresseVille($strAdresseVille){
         $this->adresseVille = $strAdresseVille;
@@ -133,7 +125,6 @@ class PersonnelEntity extends MotherEntity{
      }
 
      public function setNumService($strNumService){
-
         $this->numService = $strNumService;
      }
         
@@ -173,7 +164,6 @@ class PersonnelEntity extends MotherEntity{
      public function getHabilitations() {
         return $this->habilitations;
      }
-
 
 
 

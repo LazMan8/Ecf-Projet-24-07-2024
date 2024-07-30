@@ -1,6 +1,7 @@
 <?php
+ 
+ class MotherController
+ {
 
-class MotherController
-{
-    protected $_arrData = array();
-}
+    protected $arrData = array();
+ }
