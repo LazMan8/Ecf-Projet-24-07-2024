@@ -45,6 +45,9 @@ try {
             case "deconnexion":
                 $pcontroller->deconnexion();
                 break;
+            case "affectationRole":
+                require "../app/Views/affectation.php";
+                break;
 
             case "":
                 require "../app/Views/homePage.php";

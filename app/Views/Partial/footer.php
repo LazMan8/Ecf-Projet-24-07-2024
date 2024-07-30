@@ -5,7 +5,11 @@
 <head>
 <style>
 	footer{
-		margin:600px;
+		position: absolute; bottom: 0; left: 0;right: 0;
+		display: table-row;
+		height: 100px;
+		font-weight: bold;
+		
 		
 	}
 </style>

@@ -61,7 +61,7 @@ class PersonnelController extends MotherController
                 if ($_POST['password'] == $this->_personnel->getMdPerso())
                 {
                     // utilisateur connecter 
-                    echo 'xx';
+                
                     $this->afficherInfo();
 
                 }
