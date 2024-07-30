@@ -61,17 +61,8 @@ class PersonnelController extends MotherController
                 if ($_POST['password'] == $this->_personnel->getMdPerso())
                 {
                     // utilisateur connecter 
+                
                     $this->afficherInfo();
-
-                    // if($_POST['animaux_superviseur'] == $personnelModel->)
-                    // {
-
-                    // } 
-
-                    // else
-                    // {
-                        
-                    // }
 
                 }
                 else 
@@ -129,7 +120,7 @@ class PersonnelController extends MotherController
         // on lance la session pour le message puis redirection vers la page d'accueil
         session_start();
         $_SESSION['message'] = "Vous êtes bien déconnecté";
-        header("Location:index.php");
+        header("Location:index.php?page=confirmeDeconnexion");
         
     }
 

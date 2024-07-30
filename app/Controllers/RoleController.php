@@ -4,6 +4,10 @@
 
 class RoleController extends MotherController
 {
+    // ajout d'une variable de type RoleEntity
+    private ?RoleEntity $_roles;
+
+
     // gestion des roles
     public function gestionRoles()
     {
@@ -26,7 +30,7 @@ class RoleController extends MotherController
 
         if (isset($_GET['action']) && $_GET['action'] == 'supprimer')
         {
-            
+            # code...
             $idRoleAppli = $_GET['idRoleAppli'] ?? '';
             $idAppli = $_GET['idAppli'] ?? -1;
 
@@ -49,38 +53,75 @@ class RoleController extends MotherController
 
         $roles = $roleModel->ListRole();
 
+        
+
+        // verifie si les 
+        // if () 
+        // {
+
+        // }
 
         // requier pour tester
         require __DIR__ . "/../Views/affectationRole.php";
     }
 
-
-    // ajout d'un role
-    public function addRole()
+    public function ajoutRole()
     {
         //Initialise un tableau d'erreur
         $arrErrors	= array();
-        
-        //require de model pour faire appel a la methode 
-        require __DIR__ . "/../Models/RoleModel.php";
-        $roleModel = new RoleModel();
 
-        // appelle d'un formulaire d'ajout de role
-        require "../views/addPerso.php";
-
-        if (isset($_GET['action']) && $_GET['action'] == 'ajouter')
+        // verifie si les valeur de poste sont superieur aà0
+        if (count($_POST) > 0) 
         {
-            
-            $idRoleAppli = $_GET['idRoleAppli'] ?? '';
-            $idAppli = $_GET['idAppli'] ?? -1;
+            if ($_POST['idAppli'] == '')
+            {
+                $arrErrors['idAppli'] = "Le champs idAppli est obligatoire";
+            }
 
-            $roleModel->addRole($idRoleAppli, $idAppli);
+            if ($_POST['idRoleAppli'] == '')
+            {
+                $arrErrors['idRoleAppli'] = "Le champs idRoleAppli est obligatoire";
+            }
+
+            if ($_POST['mdpAppli'] == '')
+            {
+                $arrErrors['mdpAppli'] = "Le champs mdpAppli est obligatoire";
+            }
+
+            if (count($arrErrors) > 0) 
+            {
+                // appel du formulaire
+                require __DIR__ . "/../views/addRole.php";
+
+                // Affichage de l'erreur
+                print_r($arrErrors);
+            }
+
+            // on appelle la connexion a la base de données grâce à l'instance de RoleModel
+            require __DIR__ . "/../Models/RoleModel.php";
+            $roleModel = new RoleModel();
+
+            // on appelle le RoleEntity
+            $roleEntity = new RoleEntity($_POST['idAppli'], $_POST['idRoleAppli'], $_POST['mdpRoleAppli'], $_POST['nomAppli'], $_POST['bdAppli']);
+        
+
+            $this->_roles = $roleModel->addRole($roleEntity);
+
+            if ($this->_roles == NULL)
+            {
+                $arrErrors['error'] = "Erreur lors de l'ajout du role";
+            }
             
-            header('Location: index.php?page=gestionRole');
+            else
+            {
+                $arrErrors['success'] = "Le role a été ajouté avec succès";
+                
+            }
+
+
+
+
+
         }
-
-
-        $roles = $roleModel->ListRole();
     }
-
 }

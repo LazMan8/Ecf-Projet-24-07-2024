@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 26 juil. 2024 à 11:34
+-- Généré le : mar. 30 juil. 2024 à 12:09
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS `esthabilite` (
 --
 
 INSERT INTO `esthabilite` (`numMatriculePerso`, `idAppli`, `idRoleAppli`) VALUES
-('2', 1, 'animaux_superviseur'),
 ('2', 2, 'atelier_superviseur');
 
 -- --------------------------------------------------------
@@ -117,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `roleapplicatif` (
 --
 
 INSERT INTO `roleapplicatif` (`idAppli`, `idRoleAppli`, `mdpRoleAppli`) VALUES
-(1, 'animaux_superviseur', 'xyz'),
 (2, 'atelier_superviseur', 'zzzzzz');
 
 --

@@ -1,5 +1,6 @@
 <?php
-class RoleEntity{
+class RoleEntity extends Entity
+{
     private string $idAppli;
     private string $idRoleAppli;
     private string $mdpRoleAppli;
@@ -8,16 +9,15 @@ class RoleEntity{
 
 
 
-    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli, $nomAppli, $bdApplication){
+    public function __construct(string $idAppli, string $idRoleAppli, string $mdpRoleAppli, $nomAppli, $bdApplication)
+    {
         $this->idAppli = $idAppli;
         $this->idRoleAppli = $idRoleAppli;
         $this->mdpRoleAppli = $mdpRoleAppli;
         $this->nomAppli = $nomAppli;
         $this->bdApplication = $bdApplication;
-
-
     }
-    
+
 
     /**
      * Get the value of idAppli
@@ -79,7 +79,7 @@ class RoleEntity{
     {
         return $this->nomAppli;
     }
- 
+
     /**
      * Set the value of nomAppli
      */
@@ -87,7 +87,7 @@ class RoleEntity{
     {
         return $this->nomAppli = $nomAppli;
     }
- 
+
     /**
      * Get the value of $bddApplication
      */
@@ -95,12 +95,12 @@ class RoleEntity{
     {
         return $this->bdApplication;
     }
- 
+
     /**
      * Set the value of nomAppli
      */
- 
-     public function setBdApplication(string $bdApplication)
+
+    public function setBdApplication(string $bdApplication)
     {
         return $this->bdApplication = $bdApplication;
     }
