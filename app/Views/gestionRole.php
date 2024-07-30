@@ -8,7 +8,8 @@
 <head>
 <style>
   .pageAccueil{
-    margin-left: 600px;
+    margin-left: 800px;
+    position:fixed;
   }
 table {
   font-family: arial, sans-serif;
@@ -28,6 +29,6 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-<h1  class="pageAccueil">Page d'Accueil</h1>
+<!--<h1  class="pageAccueil">Page d'Accueil</h1>-->
 <?php
 

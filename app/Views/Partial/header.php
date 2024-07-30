@@ -24,7 +24,7 @@
             <nav>
         <a class="link" href="index.php?page=gestionRole">Gestion de rôles</a>
         <a class="link" href="index.php?page=affectationRole">Affectation de rôles</a>
-        <a class="link" href="index.php?page=">Définition de rôles</a>
+        <a class="link" href="index.php?page=definitionRole">Définition de rôles</a>
         <a class="link" href="index.php?page=login">Connexion</a>
       </nav>
 </header>

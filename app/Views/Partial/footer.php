@@ -5,7 +5,8 @@
 <head>
 <style>
 	footer{
-		margin:500px;
+		margin:600px;
+		
 	}
 </style>
 
