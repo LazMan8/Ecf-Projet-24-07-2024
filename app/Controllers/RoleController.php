@@ -30,7 +30,7 @@ class RoleController extends MotherController
             $idRoleAppli = $_GET['idRoleAppli'] ?? '';
             $idAppli = $_GET['idAppli'] ?? -1;
 
-            //$roleModel->deleteRole($idRoleAppli, $idAppli);
+            $roleModel->deleteRole($idRoleAppli, $idAppli);
             
             header('Location: index.php?page=gestionRole');
         }
