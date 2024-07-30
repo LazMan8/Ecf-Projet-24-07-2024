@@ -25,9 +25,9 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Gestion des rôles</h2>
+<h1>Gestion des rôles</h1>
 <?php
-var_dump($roles);
+
 ?>
 <form method="POST">
 <table>

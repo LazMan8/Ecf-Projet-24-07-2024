@@ -7,6 +7,9 @@
 <html>
 <head>
 <style>
+  .pageAccueil{
+    margin-left: 600px;
+  }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -25,6 +28,6 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-<h1>Affectation des rôles</h1>
+<h1  class="pageAccueil">Page d'Accueil</h1>
 <?php
 

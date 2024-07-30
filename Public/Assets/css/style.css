@@ -1,7 +1,18 @@
+
+
 .disabled {
     pointer-events: none;
     cursor: default;
     opacity: 0.6;
     color: grey;
     text-decoration: none;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  a{
+    text-decoration: none;
+    color: black;
   }

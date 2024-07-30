@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assets/css/style.css">
+    <link rel="stylesheet" href="/Assets/css/style.css?v=1">
     <title>projet</title>
 </head>
 <header>
@@ -21,5 +21,11 @@
             <?php
         } 
             ?>
+            <nav>
+        <a class="link" href="index.php?page=gestionRole">Gestion de rôles</a>
+        <a class="link" href="index.php?page=affectationRole">Affectation de rôles</a>
+        <a class="link" href="index.php?page=">Définition de rôles</a>
+        <a class="link" href="index.php?page=login">Connexion</a>
+      </nav>
 </header>
 </html>
