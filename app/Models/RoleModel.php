@@ -15,7 +15,7 @@ class RoleModel extends ConnexionBD{
         $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
-        $strQuery = 'DELETE FROM roleApplicatif WHERE idRoleAppli=? && idAppli = ?';
+        $strQuery = 'DELETE FROM roleapplicatif WHERE idRoleAppli=? && idAppli = ?';
         $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idRoleAppli, $idAppli]);
 
@@ -27,7 +27,7 @@ class RoleModel extends ConnexionBD{
 
     public function ListRole() {
         $strQuery = "SELECT `application`.idAppli, nomAppli,bdAppli,roleapplicatif.idRoleAppli,mdpRoleAppli 
-                       FROM roleApplicatif 
+                       FROM roleapplicatif 
                         INNER JOIN `application` ON `application`.idAppli = roleapplicatif.idAppli ";
                         
         $dbRoles = $this-> _dataBase->query($strQuery)->fetchAll();
@@ -43,7 +43,7 @@ class RoleModel extends ConnexionBD{
     // fonction qui ajoute un role
     public function addRole($idAppli, $mdpRoleAppli)
     {
-        $strQuery = "INSERT INTO roleapplicatif (idAppli, mdpRoleAppli) VALUES (?, ?)";
+        $strQuery = "INSERT INTO roleapplicatif (idAppli, idRoleAppli) VALUES (?, ?)";
         $stmt = $this-> _dataBase->prepare($strQuery);
         $stmt->execute([$idAppli, $mdpRoleAppli]);
         return $stmt->rowCount();

@@ -79,9 +79,9 @@ class PersonnelModel extends ConnexionBD{
         $strQuery = "SELECT personnel.numMatriculePerso,melPerso,mdpPerso,nomPerso,prenomPerso,dateNaissancePerso,adresseVille,adresseRue,adressePostale,telPerso,numService,
         roleapplicatif.idRoleAppli,nomAppli,bdAppli,mdpRoleAppli,`application`.idAppli
         FROM personnel
-            INNER JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
-                    INNER JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
-                        INNER JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
+            LEFT JOIN esthabilite ON personnel.numMatriculePerso=esthabilite.numMatriculePerso
+                    LEFT JOIN roleapplicatif ON esthabilite.idRoleAppli=roleapplicatif.idRoleAppli
+                        LEFT JOIN `application` ON `application`.idAppli=roleapplicatif.idAppli";
 
         
         $strQuery .=" WHERE melPerso = '".$strMelPerso."' ";
@@ -110,6 +110,8 @@ class PersonnelModel extends ConnexionBD{
        
 
         foreach($habilitations as $habilitation) {
+
+            if(is_null($habilitation['idAppli'])) continue;
 
             $objApplication = new ApplicationEntity(
                 $habilitation['idAppli'],
